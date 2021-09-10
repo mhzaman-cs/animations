@@ -3,17 +3,21 @@ body {
   height: 100%;
   margin: 0;
   background-color: black;
+  overflow: hidden;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
 }
 
 .sphereBackground {
-  background-color: #66BFBF;
+  background-color: #222831;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100vh;
-  top: 46rem;
 }
 
 .animation-wrapper {
@@ -79,5 +83,89 @@ body {
 @media only screen and (max-width: 768px) {
   .demo .main-title {
     font-size: 3em;
+  }
+}
+
+#loader-wrapper {
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.loaded {
+  visibility: hidden;
+}
+
+.container-animation {
+  position: relative;
+  animation: rotate 2s linear infinite;
+}
+.part {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  box-sizing: border-box;
+}
+.one {
+  top: -50px;
+  left: -50px;
+  border-radius: 100% 0 0 0;
+  animation: animato1 1s linear 1s alternate infinite;
+  border-top: 10px solid #00ADB5;
+  border-left: 10px solid #00ADB5;
+}
+.two {
+  top: -50px;
+  border-radius: 0 100% 0 0;
+  animation: animato2 1s linear alternate infinite;
+  border-top: 10px solid #00ADB5;
+  border-right: 10px solid #00ADB5;
+}
+.three {
+  left: -50px;
+  border-radius: 0 0 0 100%;
+  animation: animato3 1s linear alternate infinite;
+  border-bottom: 10px solid #00ADB5;
+  border-left: 10px solid #00ADB5;
+}
+.four {
+  top: 0px;
+  left: 0px;
+  border-radius: 0 0 100% 0;
+  animation: animato4 1s linear 1s alternate infinite;
+  border-bottom: 10px solid #00ADB5;
+  border-right: 10px solid #00ADB5;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animato1 {
+  to {
+    width: 20px; height: 20px; top: -20px; left: -20px;
+  }
+}
+@keyframes animato2 {
+  to {
+    width: 20px; height: 20px; top: -20px;
+  }
+}
+@keyframes animato3 {
+  to {
+    width: 20px; height: 20px; left: -20px;
+  }
+}
+@keyframes animato4 {
+  to {
+    width: 20px; height: 20px;
   }
 }

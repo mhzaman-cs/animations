@@ -97,3 +97,16 @@ document.onreadystatechange = function () {
       },1000);
   }
 }
+
+
+
+
+$(document).ready(function() {
+
+    setTimeout(function(){
+        $('#loader-wrapper').addClass('loaded');
+        // $("body").fadeIn(8000);
+        $("body").css("overflow", "visible");
+    }, 3000);
+
+});
