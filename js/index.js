@@ -107,6 +107,6 @@ $(document).ready(function() {
         $('#loader-wrapper').addClass('loaded');
         // $("body").fadeIn(8000);
         $("body").css("overflow", "visible");
-    }, 3000);
+    }, 1500);
 
 });
